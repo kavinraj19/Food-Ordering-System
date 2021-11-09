@@ -13,6 +13,9 @@ if($conn){
      echo"Connection not successful" . mysqli_error($conn);
      die($conn);
 }
+
+$admin_username = $_SESSION['admin_username'];
+
 ?>
 
 

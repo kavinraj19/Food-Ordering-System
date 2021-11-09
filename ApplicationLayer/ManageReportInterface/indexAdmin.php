@@ -14,8 +14,7 @@ if($conn){
      die($conn);
 }
 
-$admin_username = $_SESSION['admin_username'];
-
+$name = $_SESSION['username']; 
 ?>
 
 

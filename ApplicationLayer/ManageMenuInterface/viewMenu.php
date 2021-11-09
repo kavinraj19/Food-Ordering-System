@@ -55,19 +55,19 @@ $name = $_SESSION['username'];
 	
   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
-		<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
-		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300'>
 
-		<meta name="author" content="">
+    <meta name="author" content="">
 
-		<title>DINGO FOOD - Food Ordering System (FOS)</title>
-		<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
-				rel="stylesheet"  type='/Project/text/css'>
-		</link>
-		    <link href="/Project/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="/Project/css/home.css">
+    <title>DINGO FOOD - Food Ordering System (FOS)</title>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"
+        type='text/css'>
+    </link>
+    <link href="/Project/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/Project/css/home.css">
 
 <!-- STYLE -->
 

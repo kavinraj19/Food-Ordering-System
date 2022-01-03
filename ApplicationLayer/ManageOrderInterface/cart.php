@@ -368,28 +368,18 @@ if (isset($_POST ['delete'])) {
                           $isrc = '../../img/'; 
                           $p = "chckbox"
                       ?>
-                    <!-- CART DETAILS 
-                    <?php
-                      
-                      echo 
-                      "<tr>"
-                      . "<td><img src = '" .$isrc,$image."' width='100'><br>".$row['order_detail']."</td>"                   
-                      . "<td>".number_format((float)$row['order_price'], 2, '.', '')."</td>"
-                      . "<td><input type=\"number\" name=\"order_quantity\" value=\"".$row['order_quantity']."\"> </td>"
-                      . "<td>".number_format((float)$price, 2, '.', '')."</td>";    ?> 
-                         
-                    -->
+                    <!-- CART DETAILS - maintain by Alia -->
+                    
                       <tr>
-                        <td><input type="checkbox" id="<?=$p,$i?>" name="<?=$p,$i?>" value="CheckMenu"></td>
-                        <td style="text-align:center" ><img src="<?=$isrc,$image?>" width="110"><br> <?=$row['order_detail']?></td>
-                        <td style="text-align:center"><?=number_format((float)$row['order_price'], 2, '.', '')?></td>
+                        <td><input type="checkbox" id="<?=$p,$i?>" name="<?=$p,$i?>" value="CheckMenu" style="width: 20px; height: 20px;"></td>
+                        <td style="text-align:center" ><img src="<?=$isrc,$image?>" width="90"><br> <?=$row['order_detail']?></td>
+                        <td style="text-align:center">RM<?=number_format((float)$row['order_price'], 2, '.', '')?></td>
                         <td style="text-align:center" ><input type="number" name="order_quantity" value="<?=$order_quantity?>"> </td>
-                        <td style="text-align:center"><?=number_format((float)$price, 2, '.', '')?></td>
+                        <td style="text-align:center">RM<?=number_format((float)$price, 2, '.', '')?></td>
                         <td style="text-align:center">
-                          <button class="btn btn--radius-2 btn--red" type="submit" name="update" value="Update">Update</button>
-                          <input type="hidden" name="order_id" value="<?=$row['order_id']?>">
+                        <button class="btn btn--radius-2 btn--red" type="submit" name="update" value="Update">Update</button>
                           <button class="btn btn--radius-2 btn--red" type="submit" name="delete" value="Delete">Delete</button>
-                          
+                          <input type="hidden" name="order_id" value="<?=$row['order_id']?>">
                         </td>
                             
                       <?php
@@ -406,11 +396,12 @@ if (isset($_POST ['delete'])) {
                       ?>
 
                       <tr>
-                        <td><b>Total:</b></td>
                         <td></td>
-                        <td><b><?=$total_quantity; ?></b></td>
-                        <td style="font-size: 30px; color: red;">
-                          <b>RM<?=number_format((float)$total_price, 2, '.', ''); ?></b>
+                        <td style="font-size: 25px; color: black; font-weight:bold;">Total:</td>
+                        <td></td>
+                        <td style="font-size: 25px; color: black; font-weight:bold;"><?=$total_quantity; ?></td>
+                        <td style="font-size: 25px; color: red; font-weight:bold;">
+                          RM<?=number_format((float)$total_price, 2, '.', ''); ?>
                         </td>
                         <td></td>
                       </tr>

@@ -69,6 +69,15 @@ if (isset($_POST ['delete'])) {
         font-family: Arial, Helvetica, sans-serif;
     }
 
+    span.c{
+      display: block;
+      width: 100px;
+      height: 100px;
+      padding: 5px;
+      border: 1px solid blue;    
+      background-color: yellow; 
+    }
+
     .hero-image {
         background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/Project/img/dingoLogo4.jfif");
         height: 50%;
@@ -173,6 +182,21 @@ if (isset($_POST ['delete'])) {
         content: "";
         display: table;
         clear: both;
+    }
+    .bton {
+      display: block;
+      line-height: 20px;
+      padding: 0 20px;
+      -webkit-transition: all 0.4s ease;
+      -o-transition: all 0.4s ease;
+      -moz-transition: all 0.4s ease;
+      transition: all 0.4s ease;
+      cursor: pointer;
+      font-size: 15px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #fff;
+      font-family: inherit;
     }
     .btn {
         display: inline-block;
@@ -324,40 +348,49 @@ if (isset($_POST ['delete'])) {
                   <form action="" method="POST">
                     <table id="emp_table" width="100%" border="0" >
                       <tr class="tr_header" >
+                        <th></th>
                         <th>Name</th>
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Total</th>
                         <th>Action</th>
                       </tr>
-
+                    <!-- Error Exception Message -->
                       <?php
                       $i = 1;
                       if (is_array($data) || is_object($data)){
                         foreach($data as $row){
                           $order_quantity = $row["order_quantity"];
-                          $price = $row["menu_price"] * $order_quantity;
+                          $price = $row["order_price"] * $order_quantity;
                           $total_quantity += $order_quantity;
                           $total_price += $price;
-                          $image =  $row['menu_image'];
-                          $isrc = "../../img/"; 
+                          $image =  $row['order_image'];
+                          $isrc = '../../img/'; 
+                          $p = "chckbox"
                       ?>
-
-                      <?php
+                    <!-- CART DETAILS 
+                    <?php
+                      
                       echo 
                       "<tr>"
-                      . "<td>".$row['order_detail']."</td>"                      
-                      . "<td>".$row['order_price']."</td>"
+                      . "<td><img src = '" .$isrc,$image."' width='100'><br>".$row['order_detail']."</td>"                   
+                      . "<td>".number_format((float)$row['order_price'], 2, '.', '')."</td>"
                       . "<td><input type=\"number\" name=\"order_quantity\" value=\"".$row['order_quantity']."\"> </td>"
-                      . "<td>".$price."</td>";    ?>     
-
-                      <td>
-                        <button class="btn btn--radius-2 btn--red" type="submit" name="update" value="Update">Update</button>
-                        <br>
-                        <input type="hidden" name="order_id" value="<?=$row['order_id']?>">
-                        <button class="btn btn--radius-2 btn--red" type="submit" name="delete" value="Delete">Delete</button>
-                        <br>
-                      </td>
+                      . "<td>".number_format((float)$price, 2, '.', '')."</td>";    ?> 
+                         
+                    -->
+                      <tr>
+                        <td><input type="checkbox" id="<?=$p,$i?>" name="<?=$p,$i?>" value="CheckMenu"></td>
+                        <td style="text-align:center" ><img src="<?=$isrc,$image?>" width="110"><br> <?=$row['order_detail']?></td>
+                        <td style="text-align:center"><?=number_format((float)$row['order_price'], 2, '.', '')?></td>
+                        <td style="text-align:center" ><input type="number" name="order_quantity" value="<?=$order_quantity?>"> </td>
+                        <td style="text-align:center"><?=number_format((float)$price, 2, '.', '')?></td>
+                        <td style="text-align:center">
+                          <button class="btn btn--radius-2 btn--red" type="submit" name="update" value="Update">Update</button>
+                          <input type="hidden" name="order_id" value="<?=$row['order_id']?>">
+                          <button class="btn btn--radius-2 btn--red" type="submit" name="delete" value="Delete">Delete</button>
+                          
+                        </td>
                             
                       <?php
                       $i++;
@@ -377,7 +410,7 @@ if (isset($_POST ['delete'])) {
                         <td></td>
                         <td><b><?=$total_quantity; ?></b></td>
                         <td style="font-size: 30px; color: red;">
-                          <b>RM<?=$total_price; ?></b>
+                          <b>RM<?=number_format((float)$total_price, 2, '.', ''); ?></b>
                         </td>
                         <td></td>
                       </tr>

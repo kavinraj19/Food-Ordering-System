@@ -80,7 +80,7 @@ body, html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: black;
+  color: white;
 }
 
 .hero-text button {

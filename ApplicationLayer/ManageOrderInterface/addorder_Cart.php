@@ -96,7 +96,7 @@ body, html {
 
 .hero-text button:hover {
   background-color: #555;
-  color: white;
+  color: black;
 }
 
 ul {
